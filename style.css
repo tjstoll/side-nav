@@ -1,0 +1,77 @@
+body {
+  font-family: 'Lato', sans-serif;
+  margin: 0;
+}
+
+div {
+  padding: 3em;
+  margin: 0;
+}
+
+ul {
+  padding: 0;
+  list-style-type: none;
+}
+li {
+  padding: 10px;
+}
+li:hover {
+  background: #999;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/*Main Nav and Footer and Main Area ========================*/
+.mainNav, .footer {
+  background: #aaa;
+}
+
+.mainArea {
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+}
+
+/*Side Navigation ================================*/
+.sideNav {
+  background: #888;
+  flex: 0.5;
+}
+.listSection {
+  padding: 0;
+}
+.listSection h1,h2,h3,h4 {
+  margin: 0;
+  padding: 10px;
+}
+.listSection h3:hover, h4:hover {
+  background: #999;
+}
+.sublist {
+  display: none;
+  padding: 0;
+  padding-left: 1em;
+}
+.subListShow {display: block;}
+.fa {color: #555;}
+.fa:hover {
+  color: #fff;
+}
+
+/*Content and Sections ============================*/
+.content {
+  flex: 2;
+}
+
+.section {
+  /*height: 80vh;*/
+  border-bottom: 1px solid #aaa;
+  padding: 2em 0em;
+}
+
+.content div:last-child {
+  border-bottom: none;
+}
