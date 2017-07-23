@@ -1,28 +1,54 @@
 function toggleNav(place) {
+  // Open the sublist
+  // Show active list item
+  // Changes font awesome icon
   var item = document.getElementsByClassName('listSection')[place];
   var subItem = item.getElementsByClassName('sublist')[0];
-  subItem.classList.toggle('subListShow');
+  var subItemClassList = subItem.classList;
+  var setActive = item.getElementsByClassName('buttons')[0];
+  var setIcon = item.getElementsByTagName('i')[0];
+
+  subItemClassList.toggle('subListShow');
+  setActive.classList.toggle('active');
+  if (subItemClassList.contains('subListShow')) {
+    setIcon.setAttribute('class', 'fa fa-minus-square-o');
+  } else {
+    setIcon.setAttribute('class', 'fa fa-plus-square-o')
+  }
 }
 
 // =============================================================================
 
 function buildComponents(item, addToggleNav) {
-  var anchor = document.createElement('a');
-  var h3 = document.createElement('h3');
-  var text = document.createTextNode(' '+item.innerText);
+
+  var div = document.createElement('div');
+  div.setAttribute('class', 'buttons');
 
   if (addToggleNav) {
+    var btn2 = document.createElement('button');
     var i = document.createElement('i');
+
+    btn2.setAttribute('class', 'btn2');
     i.setAttribute('class',"fa fa-plus-square-o");
-    h3.appendChild(i);
+    btn2.appendChild(i);
   } else {
+    var btn2 = document.createElement('button');
+    btn2.setAttribute('class', 'btn2');
   }
 
-  anchor.setAttribute('href', '#'+item.id);
-  anchor.appendChild(text);
-  h3.appendChild(anchor);
+  var anchor = document.createElement('a');
+  var btn1 = document.createElement('button');
+  var text = document.createTextNode(item.innerText);
 
-  return h3;
+  anchor.setAttribute('href', '#'+item.id);
+  btn1.setAttribute('class', 'btn1');
+  anchor.appendChild(text);
+  btn1.appendChild(anchor);
+
+  div.appendChild(btn2);
+  div.appendChild(btn1);
+
+  return div;
 }
 
 // =============================================================================
@@ -62,13 +88,14 @@ function buildNav() {
     var listItem = buildComponents(titleList[sec][0], addToggle);
 
     div.appendChild(listItem);
+
     if (addToggle) {
       div.appendChild(sub);
-      div.firstChild.firstChild.setAttribute('onclick', 'toggleNav('+sec+')');
-      sideNav.appendChild(div);
+      var getbtn2 = div.firstChild.getElementsByClassName('btn2')[0];
+      getbtn2.setAttribute('onclick', 'toggleNav('+sec+')');
     } else {
-      sideNav.appendChild(div);
     }
+    sideNav.appendChild(div);
   }
 }
 

@@ -1,3 +1,8 @@
+/*$cyann: #00D9FF;
+$deepTeal: #002E36;
+$atomicPink: #AF007F;
+$stone: #006361;*/
+
 body {
   font-family: 'Lato', sans-serif;
   margin: 0;
@@ -8,25 +13,39 @@ div {
   margin: 0;
 }
 
-ul {
-  padding: 0;
-  list-style-type: none;
-}
-li {
-  padding: 10px;
-}
-li:hover {
-  background: #999;
+a:hover {
+  color: #fff;
 }
 
 a {
   text-decoration: none;
   color: inherit;
+  width: 100%;
+}
+
+form {
+  display: flex;
+}
+
+input {
+  border: none;
+  border: 2px solid #002E36;
+  border-radius: 20px 0px 0px 20px;
+  width: 100%;
+  padding: 10px;
+  color: #002E36;
+}
+
+form button {
+  background: #002E36;
+  border-radius: 0px 20px 20px 0px;
+  padding: 3px 10px;
 }
 
 /*Main Nav and Footer and Main Area ========================*/
 .mainNav, .footer {
-  background: #aaa;
+  background: #00D9FF;
+  color: #002E36;
 }
 
 .mainArea {
@@ -37,38 +56,67 @@ a {
 
 /*Side Navigation ================================*/
 .sideNav {
-  background: #888;
-  flex: 0.5;
+  background: #002E36;
+  flex: 0.75;
+  color: #99C7CF;
+  padding: 0;
+}
+.sideNaveTitle {
+  background: #006361;
+  text-align: center;
 }
 .listSection {
   padding: 0;
 }
-.listSection h1,h2,h3,h4 {
-  margin: 0;
-  padding: 10px;
-}
-.listSection h3:hover, h4:hover {
-  background: #999;
-}
 .sublist {
   display: none;
   padding: 0;
-  padding-left: 1em;
+  background: #113F47;
+  padding-left: 30px;
 }
 .subListShow {display: block;}
-.fa {color: #555;}
+.fa {
+  color:  #006361;
+  font-size: 17px;
+}
 .fa:hover {
   color: #fff;
+}
+button {
+  border: none;
+  background: none;
+  font-size: 20px;
+  padding: 0;
+}
+.buttons {
+  display: flex;
+  padding:0;
+}
+.buttons:hover, .active {
+  background: #001d25;
+}
+.btn1, .btn2 {
+  margin: 0;
+  padding: 10px 7px;
+}
+.btn1 {
+  text-align: left;
+  flex: 2;
+  color: #99C7CF;
+}
+.btn2 {
+  min-width: 30px;
 }
 
 /*Content and Sections ============================*/
 .content {
   flex: 2;
+  color: #006361;
 }
 
 .section {
   /*height: 80vh;*/
-  border-bottom: 1px solid #aaa;
+  border-bottom: 1px solid #002E36;
   padding: 2em 0em;
 }
 
